@@ -29,6 +29,7 @@ class LS {
 		task.addedToLS();
 	}
 
+	// delete task from LS
 	deleteTask(task){
 		let tasks = this.getData("tasks");
 		tasks.forEach(function(tasksElement, tasksIndex){
@@ -36,6 +37,11 @@ class LS {
 				tasks.splice(tasksIndex, 1);
 			}
 		});
-		this.setData("tasks", tasks)
+		this.setData("tasks", tasks);
+	}
+
+	// delete all tasks from LS
+	deleteTasks(){
+		localStorage.clear();
 	}
 }

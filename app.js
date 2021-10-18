@@ -42,4 +42,6 @@ function deleteTasks(e){
 	// delete all tasks from UI
 	let tasks = document.querySelector("ul");
 	ui.deleteTasks(tasks);
+	// delete tasks from LS
+	ls.deleteTasks();
 }
