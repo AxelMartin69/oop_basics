@@ -2,7 +2,7 @@ class Task {
 	constructor(name){
 		this.name = name;
 	}
-	addToUI(){
+	addedToUI(){
 		console.log(this.name + " is added to UÌ")
 	}
 	addedToLS(){
