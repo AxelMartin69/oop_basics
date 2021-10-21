@@ -1,6 +1,6 @@
 class LS {
 	// help functions to get and seta data at LS
-	getData(name){
+	getData(name) {
 		let data;
 		if(localStorage.getItem(name) === null){
 			data = []
@@ -10,7 +10,7 @@ class LS {
 		return data;
 	}
 
-	setData(name, data){
+	setData(name, data) {
 		localStorage.setItem(name, JSON.stringify(data));
 	}
 
@@ -30,10 +30,10 @@ class LS {
 	}
 
 	// delete task from LS
-	deleteTask(task){
+	deleteTask(task) {
 		let tasks = this.getData("tasks");
 		tasks.forEach(function(tasksElement, tasksIndex){
-			if(tasksElement.name === tasks){
+			if(tasksElement.name === task){
 				tasks.splice(tasksIndex, 1);
 			}
 		});
@@ -41,7 +41,8 @@ class LS {
 	}
 
 	// delete all tasks from LS
-	deleteTasks(){
+	deleteTasks() {
 		localStorage.clear();
 	}
 }
+

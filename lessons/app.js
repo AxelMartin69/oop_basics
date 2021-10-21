@@ -35,7 +35,7 @@ function deleteTask(e){
 	// delete task value from visual by UI object
 	ui.deleteTask(task);
 	// change task element content before deleting from LS
-	task = task.taskContent;
+	task = task.textContent;
 	// delete task value from LS by Ls object
 	ls.deleteTask(task);
 }
