@@ -6,12 +6,15 @@ ls = new LS();
 // from submit event
 const form = document.querySelector("form");
 const taskInput = document.querySelector("#task");
+
 // taskList X click event
 const taskList = document.querySelector("ul");
 taskList.addEventListener("click", deleteTask);
+
 // clear button event
 const clearBtn = document.querySelector("#clear-tasks");
 clearBtn.addEventListener("click", deleteTasks);
+
 // page reload
 document.addEventListener("DOMContentLoaded", getTasks)
 
