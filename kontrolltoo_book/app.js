@@ -16,20 +16,12 @@ form.addEventListener("click", addBook);
 
 
 function addBook(e) {
-	// create new object Book with input value
-	const title = new Book(titleInput.value);
-	const author = new Book(authorInput.value);
-	const isbn = new Book(isbnInput.value);
 
 	// add book value to visual by UI object
-	ui.addTitle(title);
-	ui.addAuthor(author);
-	ui.addISBN(isbn);
+	ui.addBook(titleInput, authorInput, isbnInput);
 
 	// add book to LS by LS object
-	ls.addTitle(title);
-	ls.addAuthor(author);
-	ls.addISBN(isbn);
-
+	//ls.addBook(title, author, isbn);
+	
 	e.preventDefault();
 }

@@ -26,7 +26,7 @@ class UI {
 		// find input to clear this value
 		const input = document.querySelector("#task");
 		input.value = "";
-		// log to console taht task is added to UI
+		// log to console that task is added to UI
 		task.addedToUI(); 
 	}
 
