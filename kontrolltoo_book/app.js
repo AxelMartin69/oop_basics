@@ -11,14 +11,18 @@ const isbnInput = document.querySelector("#isbn");
 
 // events
 // form submit event
-form.addEventListener("click", addBook);
+form.addEventListener("submit", addBook);
 
 
 
 function addBook(e) {
+    // create a new object Book with input value
+    const title = new Book(titleInput.value)
+    const author = new Book(authorInput.value)
+    const isbn = new Book(isbnInput.value)
 
 	// add book value to visual by UI object
-	ui.addBook(titleInput, authorInput, isbnInput);
+	ui.addBook(title, author, isbn);
 
 	// add book to LS by LS object
 	//ls.addBook(title, author, isbn);

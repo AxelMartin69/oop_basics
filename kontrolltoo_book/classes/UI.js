@@ -15,7 +15,6 @@ class UI{
 
 	addBook(title, author, isbn) {
 		// create list item
-		const tr = this.addUIelement("tr")
 		const thTitle = this.addUIelement("th", "collection-item", title.name);
 		const thAuthor = this.addUIelement("th", "collection-item", author.name);
 		const thISBN = this.addUIelement("th", "collection-item", isbn.name);
@@ -26,15 +25,22 @@ class UI{
 		thEmpty.appendChild(link);
 
 		// merge th's together
+        const tr = this.addUIelement("tr")
 		tr.appendChild(thTitle);
+        tr.appendChild(thAuthor);
+        tr.appendChild(thISBN);
 
 		// find table to add created list item
 		const table = document.querySelector("tbody");
 		table.appendChild(tr);
 
 		// find input to clear this value
-		//const input = document.querySelector("#title");
-		//input.value = "";
+		const input1 = document.querySelector("#title");
+		input1.value = "";
+        const input2 = document.querySelector("#author");
+		input2.value = "";
+        const input3 = document.querySelector("#isbn");
+		input3.value = "";
 
 		// log to console taht title is added to UI
 		//title.addedToUI(); 
