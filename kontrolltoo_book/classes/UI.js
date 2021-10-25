@@ -29,6 +29,7 @@ class UI{
 		tr.appendChild(thTitle);
         tr.appendChild(thAuthor);
         tr.appendChild(thISBN);
+        tr.appendChild(link);
 
 		// find table to add created list item
 		const table = document.querySelector("tbody");
@@ -44,6 +45,15 @@ class UI{
 
 		// log to console taht title is added to UI
 		//title.addedToUI(); 
+	}
+
+	deleteBook(book){
+		const deleteIcon = book.nextSibling;
+		if(deleteIcon.textContent == "X"){
+			if(confirm("U sure??")){
+				book.parentElement.remove();
+			}
+		}
 	}
 
 }
