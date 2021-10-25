@@ -22,7 +22,6 @@ class UI{
 		// create X
 		const thEmpty = this.addUIelement("th");
 		const link = this.addUIelement("a", "secondary-element", "X", {"href":"#"});
-		thEmpty.appendChild(link);
 
 		// merge th's together
         const tr = this.addUIelement("tr")
