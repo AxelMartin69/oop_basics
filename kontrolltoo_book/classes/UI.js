@@ -15,20 +15,21 @@ class UI{
 
 	addBook(title, author, isbn) {
 		// create list item
-		const thTitle = this.addUIelement("th", "collection-item", title.name);
-		const thAuthor = this.addUIelement("th", "collection-item", author.name);
-		const thISBN = this.addUIelement("th", "collection-item", isbn.name);
+		const thTitle = this.addUIelement("td", "collection-item", title.name);
+		const thAuthor = this.addUIelement("td", "collection-item", author.name);
+		const thISBN = this.addUIelement("td", "collection-item", isbn.name);
 
 		// create X
-		const thEmpty = this.addUIelement("th");
+		const thEmpty = this.addUIelement("td");
 		const link = this.addUIelement("a", "secondary-element", "X", {"href":"#"});
+		thEmpty.appendChild(link);
 
 		// merge th's together
         const tr = this.addUIelement("tr")
 		tr.appendChild(thTitle);
         tr.appendChild(thAuthor);
         tr.appendChild(thISBN);
-        tr.appendChild(link);
+        tr.appendChild(thEmpty);
 
 		// find table to add created list item
 		const table = document.querySelector("tbody");
@@ -54,5 +55,4 @@ class UI{
 			}
 		}
 	}
-
 }
