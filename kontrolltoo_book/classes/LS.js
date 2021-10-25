@@ -16,14 +16,14 @@ class LS{
 	// add book to LS
 	addBook(title, author, isbn) {
 		// set data to the LS
-		let tasks;
-		if(localStorage.getItem("books") === null){
-			tasks = [];
+		let titles;
+		if(localStorage.getItem("titles") === null){
+			titles = [];
 		} else {
-			tasks = JSON.parse(localStorage.getItem("tasks"));
+			titles = JSON.parse(localStorage.getItem("titles"));
 		}
-		tasks.push(title);
-		localStorage.setItem("tasks", JSON.stringify(tasks));
+		titles.push(title);
+		localStorage.setItem("titles", JSON.stringify(titles));
 		// log to console that task is added to LS
 		title.addedToLS();
 	}
