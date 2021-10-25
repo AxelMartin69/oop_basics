@@ -3,40 +3,45 @@ ui = new UI();
 ls = new LS();
 
 // event elements
-//from submit event
-const form = document.querySelector("form");
-const titleInput = document.querySelector("#title");
-const authorInput = document.querySelector("#author");
-const isbnInput = document.querySelector("#isbn");
+const form = document.querySelector('form');
+const titleInput = document.querySelector('#title');
+const authorInput = document.querySelector('#author');
+const isbnInput = document.querySelector('#isbn')
 
-// events
-// form submit event
-form.addEventListener("submit", addBook);
+// taskList X click event
+const bookData = document.querySelector('tbody');
+bookData.addEventListener('click', delBook);
 
+// page reload
+document.addEventListener('DOMContentLoaded', getBooks);
 
+//form submit event
+form.addEventListener('submit', addBook);
 
 function addBook(e) {
-    // create a new object Book with input value
-    const title = new Book(titleInput.value);
-    const author = new Book(authorInput.value);
-    const isbn = new Book(isbnInput.value);
-
-	// add book value to visual by UI object
-	ui.addBook(title, author, isbn);
-
-	// add book to LS by LS object
-	ls.addBook(title, author, isbn);
-	
+	// new object Book with input values
+	const book = new Book(titleInput.value, authorInput.value, isbnInput.value);
+	// add book value to the visual by UI
+	ui.addBook(book);
+	// add book value to the LS
+	ls.addBook(book);
 	e.preventDefault();
 }
 
-function deleteBook(e){
+function delBook(e) {
 	// get book name
-	let book = e.target.parentElement.firstChild;
+	let book = e.target.parentElement.parentElement;
 	// delete book value from visual by UI object
-	ui.deleteBook(book);
+	ui.delBook(book);
 	// change book element content before deleting from LS
-	//book = book.textContent;
-	// delete book value from LS by Ls object
-	//ls.deleteBook(book);
+	book = book.firstChild.textContent;
+	// delete book value from LS by LS object 
+	ls.delBook(book);
+}
+
+function getBooks(e) {
+	// get books from LS by this name
+	books = ls.getData('books');
+	// create task list by UI
+	ui.getBooks(books);
 }
